@@ -1,9 +1,10 @@
 #!/usr/bin/env ruby
 
-args = ARGV
+#args = ARGV
+args = ["new", "~/my_sweet_blog"]
 puts "You ran Hyde with these arguments: #{args}"
-
 #verify ARGV input is taken in as string
+
 #ARGV[0] == "new", ARGV[1] == "directory name"
 #"directory name" must start with either ~/ or "user/" AND "directory name" cannot exist
   #unless File.exists?("filename")
