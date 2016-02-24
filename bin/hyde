@@ -1,13 +1,14 @@
 #!/usr/bin/env ruby
 require './lib/structure'
+require './lib/converter'
 
 args = ARGV
 puts "You ran Hyde with these arguments: #{args}"
 if args[0] == "new"
   structure = Structure.new(args[1])
+elsif args[0] == "build"
+  converter = Converter.new(args[1])
 end
 
 if __FILE__ == $0
-  structure.make_dir
-  structure.build_folder_structure
 end

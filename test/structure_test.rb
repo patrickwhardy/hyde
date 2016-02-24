@@ -7,6 +7,7 @@ class StructureTest < Minitest::Test
   end
 
   def test_source_dir_created
-    Dir.exist?(~/my_sweet_blog/source)
+    Dir.exist?("~/my_sweet_blog/source")
   end
+
 end
