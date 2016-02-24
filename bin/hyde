@@ -11,6 +11,4 @@ elsif args[0] == "build"
 end
 
 if __FILE__ == $0
-  structure.make_dir
-  structure.build_folder_structure
 end

@@ -1,11 +1,14 @@
 require 'kramdown'
 require 'Find'
 require 'pry'
+require 'Date'
 
 class Converter
   attr_reader :html_text
   def initialize(parent_dir)
     @parent_dir = parent_dir
+    @date = Date.today.strftime("%Y-%m-%d")
+    create_output
   end
 
   def create_output
@@ -39,7 +42,7 @@ class Converter
    def write_html_files
      File.write("#{@output_dir}/index.html", @html_text[0])
      File.write("#{@output_dir}/pages/about.html", @html_text[1])
-     File.write("#{@output_dir}/posts/#{date}-welcome-to-hyde.html", @html_text[2])
+     File.write("#{@output_dir}/posts/#{@date}-welcome-to-hyde.html", @html_text[2])
    end
 
 end
