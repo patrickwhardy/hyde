@@ -21,6 +21,4 @@ class StructureTest < Minitest::Test
   #
   # end
 
-
-
 end
