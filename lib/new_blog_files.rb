@@ -1,5 +1,7 @@
 class NewBlogFiles
 
+  attr_reader :path, :post_title, :message
+
   def initialize(path, post_title, message = "Your content here")
     @path = path
     @post_title = post_title
@@ -15,8 +17,3 @@ class NewBlogFiles
   end
 
 end
-
-# if __FILE__ = $0
-new_post = NewBlogFiles.new("/Users/JenniferSoden/", "This_is_a_title")
-new_post.make_file
-# end

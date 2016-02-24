@@ -3,6 +3,7 @@ require 'Date'
 class Structure
   def initialize(parent_dir)
     @parent_dir = parent_dir
+    make_dir
   end
 
   def make_dir
@@ -11,6 +12,7 @@ class Structure
       raise ArgumentError
     else
       Dir.mkdir(@parent_dir)
+      build_folder_structure
     end
   end
 

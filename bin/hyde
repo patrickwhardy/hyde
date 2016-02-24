@@ -8,6 +8,4 @@ if args[0] == "new"
 end
 
 if __FILE__ == $0
-  structure.make_dir
-  structure.build_folder_structure
 end
