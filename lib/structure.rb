@@ -12,6 +12,7 @@ class Structure
       raise ArgumentError
     else
       Dir.mkdir(@parent_dir)
+      build_folder_structure
     end
     build_folder_structure
   end
