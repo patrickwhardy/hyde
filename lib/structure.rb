@@ -2,12 +2,16 @@ require 'Date'
 class Structure
 
   def initialize(parent_dir)
-    @default_layout = "<html>
-  <head><title>OurSite</title></head>
-  <body>
-    <%= @content %>
-  </body>
-</html>"
+    @default_layout = "<!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset='utf-8'>
+        <title>Post Title</title>
+      </head>
+      <body>
+        <%= html_content %>
+      </body>
+    </html>"
     @parent_dir = parent_dir
     make_dir
   end
