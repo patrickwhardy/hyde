@@ -6,19 +6,24 @@ class StructureTest < Minitest::Test
     @structure = Structure.new("Users/JenniferSoden/my_sweet_blog")
   end
 
+  # def teardown
+  #   @structure
+  # end
+
   def test_parent_dir_can_be_created
-    assert Dir.exists?("/Users/JenniferSoden/my_sweet_blog")
+    assert Dir.exists?("~/my_sweet_blog")
+    delete("#{@parent_dir}")
   end
 
-  # def test_raises_argument_error_if_dir_exists
-  #   skip
-  #   raise ArgumentError, Dir.exists?("/Users/JenniferSoden/my_sweet_blog")
-  # end
+  def test_raises_argument_error_if_dir_exists
+    raise ArgumentError, Dir.exists?("/Users/JenniferSoden/my_sweet_blog")
+  end
 
   # def test_can_build_a_folder_structure
   #   check for existance of
   #     parent_dir/_output
   #
   # end
+
 
 end
