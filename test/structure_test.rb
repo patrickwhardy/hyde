@@ -4,7 +4,8 @@ require "../lib/file_structure"
 
 class StructureTest < Minitest::Test
   def setup
-    @structure = Structure.new("Users/patrickwhardy/my_sweet_blog")
+    @home = File.expand_path("~/my_sweet_blog")
+    @structure = Structure.new(@home)
   end
 
   #look at minitest docs to find if I can programatically run autorun
@@ -34,5 +35,8 @@ class StructureTest < Minitest::Test
   #
   # end
 
+  def teardown
+    FileUtils.rm_rf(@home)
+  end
 
 end

@@ -10,16 +10,16 @@ class Converter
   attr_reader :html_text
   def initialize(parent_dir)
     @parent_dir = parent_dir
+    #binding.pry
     @date = Date.today.strftime("%Y-%m-%d")
     create_output
   end
 
   def create_output
-    find_markdown
-    convert_md
     build_output_folders
+    find_markdown
     copy_css_file
-    write_html_files
+    convert_md
   end
 #PASSING IN MACHINE-SPECIFIC PARENT DIR
 #NEED TO USE ~/ WITHOUT ERROR!!!
@@ -31,7 +31,17 @@ class Converter
      @html_text = @md_files.map do |file|
       Kramdown::Document.new(File.read(file)).to_html
      end
-     @html_text
+     run_erb(@html_text)
+   end
+
+   def run_erb(array)
+     output_paths = ["/index.html","/pages/about.html","/posts/#{@date}-welcome-to-hyde.html"]
+     erb_template = File.read("#{@parent_dir}/source/layouts/default.html.erb")
+     (@html_text.count).times do |i|
+       html_content = @html_text[i]
+       erb_formatted = ERB.new(erb_template).result(binding)
+       File.write("#{@output_dir}#{output_paths[i]}", erb_formatted)
+     end
    end
 
    def build_output_folders
@@ -45,10 +55,10 @@ class Converter
      File.write("#{@output_dir}/css/main.css", File.read("#{@parent_dir}/source/css/main.css"))
    end
 
-   def write_html_files
-     File.write("#{@output_dir}/index.html", @html_text[0])
-     File.write("#{@output_dir}/pages/about.html", @html_text[1])
-     File.write("#{@output_dir}/posts/#{@date}-welcome-to-hyde.html", @html_text[2])
-   end
+  #  def write_html_files
+  #    File.write("#{@output_dir}/index.html", @html_text[0])
+  #    File.write("#{@output_dir}/pages/about.html", @html_text[1])
+  #    File.write("#{@output_dir}/posts/#{@date}-welcome-to-hyde.html", @html_text[2])
+  #  end
 
 end
