@@ -1,3 +1,4 @@
+require_relative 'test_helper'
 require 'Date'
 require "minitest/autorun"
 require 'minitest/pride'
@@ -42,7 +43,7 @@ class ConverterTest < Minitest::Test
   #Errno::EEXIST: File exists @ dir_s_mkdir - /Users/patrickwhardy/my_sweet_blog/_output/css
 #careful with this one!!!
 #still does not delete directories?!?!
-  # def teardown
-  #   FileUtils.rm_rf("~/my_sweet_blog/_output")
-  # end
+   def teardown
+    FileUtils.rm_rf("~/my_sweet_blog/_output")
+   end
 end
