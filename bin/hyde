@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require './lib/structure'
 require './lib/converter'
+require './lib/new_blog_files'
 
 args = ARGV
 puts "You ran Hyde with these arguments: #{args}"

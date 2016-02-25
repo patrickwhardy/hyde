@@ -2,6 +2,9 @@ require 'kramdown'
 require 'Find'
 require 'pry'
 require 'Date'
+require 'erb' #????
+
+#use more readers, less instance variables
 
 class Converter
   attr_reader :html_text

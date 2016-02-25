@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= post_title %></title>
+  </head>
+  <body>
+    <%= message %>
+  </body>
+</html>
+
+# somehow read layout.html.erb into a string
+# set the variables @post_title and @message(should be an html string)
+# Send it through ERB using ERB.new(layout_string).result(binding)
+# save the output of ERB in a file called layout.html

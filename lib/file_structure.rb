@@ -10,14 +10,14 @@ class Structure
   end
 
   def make_dir
-    if Dir.exists?(@parent_dir)
-      puts "!!!This Directory Already Exists!!!"
-      raise ArgumentError
-    else
-      # Dir.mkdir(@parent_dir)
+    # if Dir.exists?(@parent_dir)
+    #   puts "!!!This Directory Already Exists!!!"
+    #   raise ArgumentError
+    # else
+    #   # Dir.mkdir(@parent_dir)
 
       build_folder_structure
-    end
+    # end
   end
 
   def build_folder_structure
@@ -39,3 +39,5 @@ class Structure
         File.write("source/posts/#{date}-welcome-to-hyde.markdown", "# Some Markdown\n\n* a list\n* another item")
     end
 end
+
+structure = Structure.new("/Users/JenniferSoden")

@@ -1,5 +1,6 @@
 require 'Date'
 class Structure
+
   def initialize(parent_dir)
     @default_layout = "<html>
   <head><title>OurSite</title></head>
@@ -10,6 +11,7 @@ class Structure
     @parent_dir = parent_dir
     make_dir
   end
+
   def make_dir
     if Dir.exists?(@parent_dir)
       puts "!!!This Directory Already Exists!!!"
@@ -19,6 +21,7 @@ class Structure
       build_folder_structure
     end
   end
+
   def build_folder_structure
     date = Date.today.strftime("%Y-%m-%d")
     Dir.mkdir("#{@parent_dir}/_output")
@@ -35,5 +38,3 @@ class Structure
         File.write("#{source_dir}/posts/#{date}-welcome-to-hyde.markdown", "# Some Markdown\n\n* a list\n* another item")
     end
 end
-
-structure = Structure.new("Users/JenniferSoden/my_sweet_blog")
