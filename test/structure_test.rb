@@ -1,18 +1,30 @@
 require 'test_helper'
 require "minitest/autorun"
-require "../lib/structure"
+require "../lib/file_structure"
 
 class StructureTest < Minitest::Test
   def setup
     @structure = Structure.new("Users/patrickwhardy/my_sweet_blog")
   end
 
+  #look at minitest docs to find if I can programatically run autorun
+  #set dir, run autorun, delete dirs
+
+  # OR
+
+  #manually run every test method
+
+  # def teardown
+  #   @structure
+  # end
+  #
   def test_parent_dir_can_be_created
     assert Dir.exists?("/Users/patrickwhardy/my_sweet_blog")
+    # assert, Dir.exists?(@home)
+  #   delete("#{@parent_dir}")
   end
 
   # def test_raises_argument_error_if_dir_exists
-  #   skip
   #   raise ArgumentError, Dir.exists?("/Users/JenniferSoden/my_sweet_blog")
   # end
 
@@ -21,5 +33,6 @@ class StructureTest < Minitest::Test
   #     parent_dir/_output
   #
   # end
+
 
 end

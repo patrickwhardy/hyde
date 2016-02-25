@@ -40,9 +40,6 @@ class ConverterTest < Minitest::Test
     assert File.exists?("~/my_sweet_blog/_output/pages/about.html")
     assert File.exists?("~/my_sweet_blog/_output/posts/#{date}-welcome-to-hyde.html")
   end
-  #Errno::EEXIST: File exists @ dir_s_mkdir - /Users/patrickwhardy/my_sweet_blog/_output/css
-#careful with this one!!!
-#still does not delete directories?!?!
    def teardown
     FileUtils.rm_rf("~/my_sweet_blog/_output")
    end

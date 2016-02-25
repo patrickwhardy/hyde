@@ -8,6 +8,8 @@ class NewBlogFilesTest < Minitest::Test
     @new_post.make_file
   end
 
+#change message tests to accept an array, and then join to make a string.
+
   def test_class_accepts_a_path
 
     assert_equal "/Users/JenniferSoden/", @new_post.path

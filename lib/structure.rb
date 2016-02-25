@@ -1,6 +1,6 @@
 require 'Date'
-
 class Structure
+
   def initialize(parent_dir)
     @default_layout = "<html>
   <head><title>OurSite</title></head>

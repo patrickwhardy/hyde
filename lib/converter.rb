@@ -2,6 +2,9 @@ require 'kramdown'
 require 'Find'
 require 'pry'
 require 'Date'
+require 'erb' #????
+
+#use more readers, less instance variables
 
 class Converter
   attr_reader :html_text
@@ -22,7 +25,7 @@ class Converter
 #NEED TO USE ~/ WITHOUT ERROR!!!
   def find_markdown
     @md_files = Dir.glob("#{@parent_dir}/**/*.markdown")
-   end
+  end
 
    def convert_md
      @html_text = @md_files.map do |file|
