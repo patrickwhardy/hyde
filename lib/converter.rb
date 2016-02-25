@@ -15,6 +15,7 @@ class Converter
     find_markdown
     convert_md
     build_output_folders
+    copy_css_file
     write_html_files
   end
 
@@ -33,10 +34,13 @@ class Converter
 
    def build_output_folders
      @output_dir = "#{@parent_dir}/_output"
-     Dir.mkdir("#{@output_dir}/css")
-       File.write("#{@output_dir}/css/main.css", File.read("#{@parent_dir}/source/css/main.css"))
-     Dir.mkdir("#{@output_dir}/pages")
-     Dir.mkdir("#{@output_dir}/posts")
+     Dir.mkdir("#{@output_dir}/css") unless Dir.exists?("#{@output_dir}/css")
+     Dir.mkdir("#{@output_dir}/pages") unless Dir.exists?("#{@output_dir}/pages")
+     Dir.mkdir("#{@output_dir}/posts") unless Dir.exists?("#{@output_dir}/posts")
+   end
+
+   def copy_css_file
+     File.write("#{@output_dir}/css/main.css", File.read("#{@parent_dir}/source/css/main.css"))
    end
 
    def write_html_files

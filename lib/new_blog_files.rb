@@ -1,3 +1,4 @@
+require 'pry'
 class NewBlogFiles
 
   attr_reader :path, :post_title, :message
@@ -6,6 +7,7 @@ class NewBlogFiles
     @path = path
     @post_title = post_title
     @message = message
+    binding.pry
   end
 
   def make_file

@@ -2,6 +2,12 @@ require 'Date'
 
 class Structure
   def initialize(parent_dir)
+    @default_layout = "<html>
+  <head><title>OurSite</title></head>
+  <body>
+    <%= @content %>
+  </body>
+</html>"
     @parent_dir = parent_dir
     make_dir
   end
@@ -14,7 +20,6 @@ class Structure
       Dir.mkdir(@parent_dir)
       build_folder_structure
     end
-    build_folder_structure
   end
 
   def build_folder_structure
@@ -22,6 +27,8 @@ class Structure
     Dir.mkdir("#{@parent_dir}/_output")
     source_dir = "#{@parent_dir}/source"
     Dir.mkdir("#{source_dir}")
+      Dir.mkdir("#{source_dir}/layouts")
+        File.write("#{source_dir}/layouts/default.html.erb", @default_layout)
       File.write("#{source_dir}/index.markdown", "# Some Markdown\n\n* a list\n* another item")
       Dir.mkdir("#{source_dir}/css")
         File.write("#{source_dir}/css/main.css", ' ')

@@ -1,3 +1,4 @@
+require 'test_helper'
 require_relative "../lib/new_blog_files"
 require 'minitest/autorun'
 

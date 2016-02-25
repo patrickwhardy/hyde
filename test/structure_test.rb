@@ -1,13 +1,14 @@
+require 'test_helper'
 require "minitest/autorun"
 require "../lib/structure"
 
 class StructureTest < Minitest::Test
   def setup
-    @structure = Structure.new("Users/JenniferSoden/my_sweet_blog")
+    @structure = Structure.new("Users/patrickwhardy/my_sweet_blog")
   end
 
   def test_parent_dir_can_be_created
-    assert Dir.exists?("/Users/JenniferSoden/my_sweet_blog")
+    assert Dir.exists?("/Users/patrickwhardy/my_sweet_blog")
   end
 
   # def test_raises_argument_error_if_dir_exists
