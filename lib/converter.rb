@@ -18,7 +18,6 @@ class Converter
     copy_css_file
     write_html_files
   end
-
 #PASSING IN MACHINE-SPECIFIC PARENT DIR
 #NEED TO USE ~/ WITHOUT ERROR!!!
   def find_markdown
