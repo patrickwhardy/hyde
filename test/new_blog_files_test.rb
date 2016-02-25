@@ -1,18 +1,22 @@
-require 'test_helper'
+require_relative 'test_helper'
 require_relative "../lib/new_blog_files"
+require_relative "../lib/structure"
 require 'minitest/autorun'
 
 class NewBlogFilesTest < Minitest::Test
   def setup
-    @new_post = NewBlogFiles.new("/Users/JenniferSoden/", "this_is_a_title")
+    @parent_directory = File.expand_path("~/my_sweet_blog")
+    Structure.new(@parent_directory)
+    @new_post = NewBlogFiles.new(@parent_directory, "this_is_a_title")
     @new_post.make_file
   end
 
-#change message tests to accept an array, and then join to make a string.
+  def teardown
+    FileUtils.rm_rf(@parent_directory)
+  end
 
   def test_class_accepts_a_path
-
-    assert_equal "/Users/JenniferSoden/", @new_post.path
+    assert_equal @parent_directory, @new_post.path
   end
 
   def test_class_accepts_a_string_path
@@ -32,13 +36,13 @@ class NewBlogFilesTest < Minitest::Test
   end
 
   def test_class_can_accept_a_message
-    new_post = NewBlogFiles.new("/Users/JenniferSoden/", "this_is_a_title", "MESSAGE!")
+    new_post = NewBlogFiles.new(@parent_directory, "this_is_a_title", "MESSAGE!")
     new_post.make_file
     assert_equal "MESSAGE!", new_post.message
   end
 
   def test_make_file_creates_a_new_markdown_file
-    File.delete("/Users/JenniferSoden/this_is_a_title.markdown")
+    FileUtils.rm_rf("#{@parent_directory}/this_is_a_titlemarkdown")
     refute File.exist?(@new_post.post_title)
     @new_post.make_file
     assert true, File.exist?(@new_post.post_title)

@@ -7,7 +7,7 @@ require_relative '../lib/converter'
 
 class ConverterTest < Minitest::Test
   def setup
-    @parent_directory = "/Users/patrickwhardy/my_sweet_blog"
+    @parent_directory = File.expand_path("~/my_sweet_blog")
     @converter = Converter.new(@parent_directory)
     @date = Date.today.strftime("%Y-%m-%d")
   end
@@ -21,7 +21,6 @@ class ConverterTest < Minitest::Test
 # "# Some Markdown\n\n* a list\n* another item"
   def test_convert_md_intakes_markdown_and_outputs_html
     assert_equal "<h1 id=\"some-markdown\">Some Markdown</h1>
-
 <ul>
   <li>a list</li>
   <li>another item</li>
@@ -41,6 +40,6 @@ class ConverterTest < Minitest::Test
     assert File.exists?("~/my_sweet_blog/_output/posts/#{date}-welcome-to-hyde.html")
   end
    def teardown
-    FileUtils.rm_rf("~/my_sweet_blog/_output")
+    FileUtils.rm_rf(@parent_directory)
    end
 end
