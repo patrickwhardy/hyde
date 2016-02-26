@@ -5,7 +5,7 @@ require './lib/new_blog_files'
 require 'FileWatcher'
 require 'kramdown'
 require 'pry'
-@home = File.expand_path("~/my_sweet_blog")
+@parent_directory = File.expand_path("~/my_sweet_blog")
 
 args = ARGV
 puts "You ran Hyde with these arguments: #{args}"
@@ -16,9 +16,9 @@ elsif args[0] == "build"
 elsif args[0] == "post"
  new_blog_post = NewBlogFiles.new(args[1], args[2], args[3..-1])
 elsif args[0] == "watchfs"
-  FileWatcher.new(["#{@home}/source"]).watch do |filename, event|
+  FileWatcher.new(["#{@parent_directory}/source"]).watch do |filename, event|
     if(event == :changed)
-      `bin/hyde build #{@home}`
+      `bin/hyde build #{@parent_directory}`
        puts "_output updated!"
     end
   end
