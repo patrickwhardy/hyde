@@ -1,3 +1,5 @@
+require 'pry'
+require_relative 'converter'
 class NewBlogFiles
 
   attr_reader :parent_directory, :post_title, :message
@@ -12,6 +14,7 @@ class NewBlogFiles
 
   def make_file
     File.write("#{@parent_directory}/source/posts/#{@post_title}.markdown", prepopulated_content)
+    @converter = Converter.new(@parent_directory)
   end
 
   def prepopulated_content
