@@ -1,7 +1,7 @@
 require 'Date'
 class Structure
 
-  def initialize(parent_dir)
+  def initialize(parent_directory)
     @default_layout = "<!DOCTYPE html>
     <html>
       <head>
@@ -12,24 +12,24 @@ class Structure
         <%= html_content %>
       </body>
     </html>"
-    @parent_dir = parent_dir
+    @parent_directory = parent_directory
     make_dir
   end
 
   def make_dir
-    if Dir.exists?(@parent_dir)
+    if Dir.exists?(@parent_directory)
       puts "!!!This Directory Already Exists!!!"
       raise ArgumentError
     else
-      Dir.mkdir(@parent_dir)
+      Dir.mkdir(@parent_directory)
       build_folder_structure
     end
   end
 
   def build_folder_structure
     date = Date.today.strftime("%Y-%m-%d")
-    Dir.mkdir("#{@parent_dir}/_output")
-    source_dir = "#{@parent_dir}/source"
+    Dir.mkdir("#{@parent_directory}/_output")
+    source_dir = "#{@parent_directory}/source"
     Dir.mkdir("#{source_dir}")
       Dir.mkdir("#{source_dir}/layouts")
         File.write("#{source_dir}/layouts/default.html.erb", @default_layout)
