@@ -41,6 +41,10 @@ class NewBlogFilesTest < Minitest::Test
     assert_equal "MESSAGE!", new_post.message
   end
 
+  def test_can_make_a_new_post_in_source
+    assert File.exists?("#{@parent_directory}/source/posts/this_is_a_title.markdown")
+  end
+
   def test_make_file_creates_a_new_markdown_file
     FileUtils.rm_rf("#{@parent_directory}/this_is_a_titlemarkdown")
     refute File.exist?(@new_post.post_title)
