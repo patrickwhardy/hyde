@@ -2,15 +2,11 @@
 require './lib/structure'
 require './lib/converter'
 require './lib/new_blog_files'
-# require 'FileWatcher'
+require 'FileWatcher'
 require 'kramdown'
 require 'pry'
-<<<<<<< HEAD
-# @parent_directory = File.expand_path(args[1])
-=======
-@parent_directory = File.expand_path("~/my_sweet_blog")
->>>>>>> 0c0c6a29dcfb4f05d55b9a7b25ef7cadda74fe8f
 
+#@parent_directory = File.expand_path("~/my_sweet_blog")
 args = ARGV
 puts "You ran Hyde with these arguments: #{args}"
 if args[0] == "new"
@@ -19,21 +15,11 @@ elsif args[0] == "build"
   converter = Converter.new(args[1])
 elsif args[0] == "post"
  new_blog_post = NewBlogFiles.new(args[1], args[2], args[3..-1])
-<<<<<<< HEAD
-# elsif args[0] == "watchfs"
-#   FileWatcher.new(["#{@parent_directory}/source"]).watch do |filename, event|
-#     if(event == :changed)
-#       `bin/hyde build #{@parent_directory}`
-#        puts "_output updated!"
-    # end
-  # end
-=======
 elsif args[0] == "watchfs"
-  FileWatcher.new(["#{@parent_directory}/source"]).watch do |filename, event|
+  FileWatcher.new(["#{args[1]}/source"]).watch do |filename, event|
     if(event == :changed)
-      `bin/hyde build #{@parent_directory}`
-       puts "_output updated!"
+      `bin/hyde build #{args[1]}`
+      puts "_output updated!"
     end
   end
->>>>>>> 0c0c6a29dcfb4f05d55b9a7b25ef7cadda74fe8f
 end
