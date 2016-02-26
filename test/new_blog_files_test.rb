@@ -16,11 +16,11 @@ class NewBlogFilesTest < Minitest::Test
   end
 
   def test_class_accepts_a_path
-    assert_equal @parent_directory, @new_post.path
+    assert_equal @parent_directory, @new_post.parent_directory
   end
 
   def test_class_accepts_a_string_path
-    assert String, @new_post.path
+    assert String, @new_post.parent_directory
   end
 
   def test_class_accepts_a_post_title
