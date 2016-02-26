@@ -31,4 +31,6 @@ class StructureTest < Minitest::Test
     assert File.exists?("#{@parent_directory}/source/pages/about.markdown")
   end
 
+  # sad path tests --> what if input is wrong? what if bad characters? 
+
 end

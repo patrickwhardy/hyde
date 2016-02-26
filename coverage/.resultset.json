@@ -74,7 +74,7 @@
   },
   "MiniTest": {
     "coverage": {
-      "/Users/JenniferSoden/hyde/lib/structure.rb": [
+      "/Users/patrickwhardy/Turing/1module/1hyde/hyde/lib/structure.rb": [
         1,
         1,
         null,
@@ -120,7 +120,7 @@
         null,
         null
       ],
-      "/Users/JenniferSoden/hyde/lib/new_blog_files.rb": [
+      "/Users/patrickwhardy/Turing/1module/1hyde/hyde/lib/new_blog_files.rb": [
         1,
         1,
         1,
@@ -136,16 +136,16 @@
         null,
         null,
         1,
-        18,
-        18,
+        19,
+        19,
         null,
         null,
         1,
-        18,
+        19,
         null,
         null
       ],
-      "/Users/JenniferSoden/hyde/lib/converter.rb": [
+      "/Users/patrickwhardy/Turing/1module/1hyde/hyde/lib/converter.rb": [
         1,
         1,
         1,
@@ -155,14 +155,14 @@
         1,
         1,
         1,
-        22,
-        22,
-        22,
-        22,
+        21,
+        21,
+        21,
+        21,
         null,
         null,
         1,
-        22,
+        21,
         21,
         21,
         21,
@@ -174,16 +174,16 @@
         null,
         1,
         21,
-        124,
+        126,
         null,
         21,
         null,
         null,
         1,
         21,
-        124,
-        124,
-        124,
+        126,
+        126,
+        126,
         null,
         null,
         null,
@@ -191,9 +191,9 @@
         21,
         21,
         21,
-        124,
-        124,
-        124,
+        126,
+        126,
+        126,
         null,
         null,
         null,
@@ -205,7 +205,7 @@
         null,
         null,
         1,
-        22,
+        21,
         21,
         21,
         null,
@@ -216,7 +216,7 @@
         null,
         null
       ],
-      "/Users/JenniferSoden/hyde/test/new_blog_files_test.rb": [
+      "/Users/patrickwhardy/Turing/1module/1hyde/hyde/test/new_blog_files_test.rb": [
         1,
         1,
         1,
@@ -224,18 +224,14 @@
         null,
         1,
         1,
-        7,
-        7,
-        7,
-        7,
+        8,
+        8,
+        8,
+        8,
         null,
         null,
         1,
-        7,
-        null,
-        null,
-        1,
-        1,
+        8,
         null,
         null,
         1,
@@ -256,6 +252,14 @@
         null,
         1,
         1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         1,
         1,
         null,
@@ -268,7 +272,7 @@
         null,
         null
       ],
-      "/Users/JenniferSoden/hyde/test/structure_test.rb": [
+      "/Users/patrickwhardy/Turing/1module/1hyde/hyde/test/structure_test.rb": [
         1,
         1,
         1,
@@ -305,6 +309,6 @@
         null
       ]
     },
-    "timestamp": 1456463803
+    "timestamp": 1456505992
   }
 }
