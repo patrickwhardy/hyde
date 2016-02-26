@@ -6,7 +6,6 @@ require 'FileWatcher'
 require 'kramdown'
 require 'pry'
 
-#@parent_directory = File.expand_path("~/my_sweet_blog")
 args = ARGV
 puts "You ran Hyde with these arguments: #{args}"
 if args[0] == "new"

@@ -28,7 +28,7 @@ class StructureTest < Minitest::Test
 
   def test_can_create_files_within_the_structure
     assert File.exists?("#{@parent_directory}/source/layouts/default.html.erb")
-      assert File.exists?("#{@parent_directory}/source/pages/about.markdown")
+    assert File.exists?("#{@parent_directory}/source/pages/about.markdown")
   end
 
 end
